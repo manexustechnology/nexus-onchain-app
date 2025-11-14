@@ -168,10 +168,10 @@ function PoolInfoCard({
           <div>
             <CardTitle className="text-2xl">{pairName}</CardTitle>
             <CardDescription className="mt-2 flex gap-2">
-              <Badge variant={pool.dex === 'dragonswap' ? 'default' : 'secondary'}>
+              <Badge variant={pool.dex === 'dragonswap' ? 'default' : 'success'}>
                 {pool.dex === 'dragonswap' ? 'DragonSwap' : 'Sailor Finance'}
               </Badge>
-              {pool.feeTier && <Badge variant="outline">{pool.feeTier}</Badge>}
+              {pool.feeTier && <Badge variant="warning">{pool.feeTier}</Badge>}
             </CardDescription>
           </div>
         </div>

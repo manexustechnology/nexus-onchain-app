@@ -251,20 +251,20 @@ function PoolCard({ pool, dictionary, formatNumber, formatCurrency }: PoolCardPr
     <Card className="luxury-card border-0 group hover:scale-[1.02] transition-all duration-300 overflow-hidden">
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-      
+
       <CardHeader className="pb-3 relative">
         <div className="flex items-start justify-between">
           <div className="space-y-2">
             <CardTitle className="text-xl font-bold">{pairName}</CardTitle>
             <div className="flex gap-2 flex-wrap">
-              <Badge 
-                variant={pool.dex === 'dragonswap' ? 'default' : 'secondary'}
+              <Badge
+                variant={pool.dex === 'dragonswap' ? 'default' : 'success'}
                 className="font-medium"
               >
                 {pool.dex === 'dragonswap' ? dictionary.dragonswap : dictionary.sailor}
               </Badge>
               {pool.feeTier && (
-                <Badge variant="outline" className="border-primary/20">
+                <Badge variant="warning" className="border-primary/20">
                   {pool.feeTier}
                 </Badge>
               )}
@@ -275,7 +275,7 @@ function PoolCard({ pool, dictionary, formatNumber, formatCurrency }: PoolCardPr
           </div>
         </div>
       </CardHeader>
-      
+
       <CardContent className="space-y-4 relative">
         <div className="space-y-3">
           <div className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
@@ -285,7 +285,7 @@ function PoolCard({ pool, dictionary, formatNumber, formatCurrency }: PoolCardPr
             </div>
             <dd className="text-sm font-bold">{formatCurrency(pool.tvl)}</dd>
           </div>
-          
+
           <div className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
             <div className="flex items-center gap-2">
               <BarChart3 className="h-4 w-4 text-muted-foreground" />
@@ -293,7 +293,7 @@ function PoolCard({ pool, dictionary, formatNumber, formatCurrency }: PoolCardPr
             </div>
             <dd className="text-sm font-bold">{formatCurrency(pool.volume24h)}</dd>
           </div>
-          
+
           <div className="flex items-center justify-between p-3 rounded-lg bg-gradient-to-r from-green-500/10 to-emerald-500/10">
             <div className="flex items-center gap-2">
               {aprValue > 0 ? (
@@ -308,7 +308,7 @@ function PoolCard({ pool, dictionary, formatNumber, formatCurrency }: PoolCardPr
             </dd>
           </div>
         </div>
-        
+
         <div className="pt-3 border-t border-border/50">
           <p className="text-[10px] font-mono text-muted-foreground truncate">
             {pool.poolAddress}
